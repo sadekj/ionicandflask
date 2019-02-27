@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Users
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <form *ngIf="showSignIn" (ngSubmit)="signin()">
+          <ion-item>
+            <ion-label>Username </ion-label>
+            <ion-input [(ngModel)]="username" placeholder="username" name="username" type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Password </ion-label>
+            <ion-input [(ngModel)]="password" placeholder="password" name="password" type="password"></ion-input>
+          </ion-item>
+          <ion-button expand="block" type="submit" block>Signin</ion-button>
+        </form>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <form *ngIf="showSignUp" (ngSubmit)="signup()">
+          <ion-item>
+            <ion-label>First Name </ion-label>
+              <ion-input [(ngModel)]="fname" placeholder="First Name" name="fname" type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Last Name </ion-label>
+            <ion-input [(ngModel)]="lname" placeholder="lname" name="lname" type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Email </ion-label>
+            <ion-input [(ngModel)]="email" placeholder="email" name="email" type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Username </ion-label>
+            <ion-input [(ngModel)]="username" placeholder="username" name="username" type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Password </ion-label>
+            <ion-input [(ngModel)]="password" placeholder="password" name="password" type="password"></ion-input>
+          </ion-item>
+          <ion-button expand="block" type="submit" block>Signup</ion-button>
+        </form>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="data.msg">
+      <ion-col>
+        <h3>{{data.msg}}</h3>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="showSignIn || showSignUp">
+      <ion-col>
+        <ion-item>
+          <ion-label expand="block">OR</ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="showSignIn == false">
+        <ion-col>
+          <ion-button expand="block" (click)="showSignInForm()">Sign In</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="showSignUp == false">
+        <ion-col>
+          <ion-button expand="block" (click)="showSignUpForm()">Sign Up</ion-button>
+        </ion-col>
+      </ion-row>
+  </ion-grid>
+</ion-content>

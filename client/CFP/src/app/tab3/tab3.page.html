@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Posts
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <form (ngSubmit)="addPost()">
+          <ion-item>
+            <ion-input [(ngModel)]="content" placeholder="content" name="content" type="text"></ion-input>
+          </ion-item>
+          <ion-button expand="block" type="submit" block>Post</ion-button>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

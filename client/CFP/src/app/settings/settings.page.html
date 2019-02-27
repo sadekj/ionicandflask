@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <ion-list>
+        <ion-item>
+          <strong>App Name: </strong> CFP
+        </ion-item>
+        <ion-item>
+          <strong>Version: </strong> 1.0.0
+        </ion-item>
+        <ion-item>
+          <strong>Description: </strong> Ionic tutorial project
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-label>Show Full Name</ion-label>
+        <ion-checkbox slot="end" [(ngModel)]="fullNameChecked" (ionChange)="fullNameCheck()" ></ion-checkbox>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>

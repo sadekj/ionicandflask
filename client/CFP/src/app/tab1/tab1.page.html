@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid *ngIf="data">
+      <ion-row>
+        <ion-col>
+          <ion-item>
+          <h2 class="data">Hello, {{data.fname}} {{data.lname}} </h2>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-item *ngFor="let post of posts">
+      <div *ngIf="!fullNameChecked" class="user">
+        {{post.username}}:{{post.content}}
+      </div>
+      <div *ngIf="fullNameChecked"class="user">
+        {{post.fname}} {{post.lname}} : {{post.content}}
+      </div>
+    </ion-item>
+</ion-content>
